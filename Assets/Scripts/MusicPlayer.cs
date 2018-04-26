@@ -51,6 +51,13 @@ public class MusicPlayer : MonoBehaviour
         if (scene.buildIndex == 0)
         {
             music.clip = menu;
+        } else if (scene.buildIndex == 1)
+        {
+            music.clip = question;
+        } else
+        {
+            int randomMusicIndex = UnityEngine.Random.Range(0, level.Length);
+            music.clip = level[randomMusicIndex];
         }
         
                         //	We make sure the clip plays as 2D sound

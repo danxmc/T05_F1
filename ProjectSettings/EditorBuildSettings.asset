@@ -9,17 +9,11 @@ EditorBuildSettings:
     path: Assets/_Scenes/Menu.unity
     guid: 4d737f5c35861124e8c29a49fd322941
   - enabled: 1
+    path: Assets/_Scenes/Questions.unity
+    guid: 333832f496cf4434cb749885652847a8
+  - enabled: 1
     path: Assets/_Scenes/Level01.unity
     guid: 5779151c7a89855488f092aed0f9f04c
   - enabled: 1
-    path: Assets/_Scenes/Level02.unity
-    guid: 8bf4f3c2c371ecb4eb2a0aaaaf9954f6
-  - enabled: 1
-    path: Assets/_Scenes/Level03.unity
-    guid: dc67d88653a09ce45988a8fa4ccb2dc3
-  - enabled: 1
     path: Assets/_Scenes/Credits.unity
     guid: bb3cbb3305b298c4ebb48e3eddbb2470
-  - enabled: 1
-    path: Assets/_Scenes/Questions.unity
-    guid: 333832f496cf4434cb749885652847a8

@@ -51,7 +51,7 @@ public class MusicPlayer : MonoBehaviour
         if (scene.buildIndex == 0)
         {
             music.clip = menu;
-        } else if (scene.buildIndex == 1)
+        } else if (scene.buildIndex == 2)
         {
             music.clip = question;
         } else

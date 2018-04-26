@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour {
-
+    public Transform player;
     public PlayerMovement movement;
 
     // This function runs when we hit another object.
@@ -13,6 +13,7 @@ public class PlayerCollision : MonoBehaviour {
         {
             // Disbale the players movement.
             movement.enabled = false;
+            ScoreKeeper.score += (int)player.position.z;
             GameObject.Find("LevelManager").GetComponent<LevelManager>().LoadLevel("Questions");
         }
     }

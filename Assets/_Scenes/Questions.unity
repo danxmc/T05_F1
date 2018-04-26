@@ -886,11 +886,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53f5674806570145a772ec83d56c06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textFile: {fileID: 4900000, guid: 1211a0a03ccb180488e79bf4c2090fc1, type: 3}
   questionText: {fileID: 625472337}
-  level1Questions:
-  - hola
-  - soy
-  - german
+  levelQuestions: []
 --- !u!4 &1861422731
 Transform:
   m_ObjectHideFlags: 0

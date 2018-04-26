@@ -6,16 +6,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Trivia : MonoBehaviour {
-
+    public TextAsset textFile;
     public Text questionText;
 
     //These arrays will hold the questions for each level
-    public string[] level1Questions;
+    public List <String> levelQuestions;
     //currentQuestion
     private  string currentQuestion;
-
-
-    int level = 1;
 
     private bool isTrue;
     private bool answer;
@@ -24,11 +21,24 @@ public class Trivia : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        processTextFile();
         SetRandomQuestion();
     }
 
+    void processTextFile()
+    {
+        /* split the text file by newline characters */
+        string[] lineArray = textFile.text.Split("\n"[0]);
+        /* loop over each line in the file */
+        foreach (string thisLine in lineArray)
+        {
+            /* split each line by | */
+            /* load question and answer to arrays */
+            levelQuestions.Add(thisLine);
+        }
+        Debug.Log("I found " + levelQuestions.Count + " questions ");
+    }
 
-    
     public void TrueAnswer()
     {
         Debug.Log("Correct");
@@ -51,13 +61,13 @@ public class Trivia : MonoBehaviour {
         }
         else
         {
-            GameObject.Find("LevelManager").GetComponent<LevelManager>().LoadLevel("Menu");
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().LoadLevel("Credits");
         }
     }
 
     private void SetRandomQuestion()
     {
-        int randomQuestionIndex = UnityEngine.Random.Range(0, level1Questions.Length);
+        int randomQuestionIndex = UnityEngine.Random.Range(0, levelQuestions.Count);
         if (randomQuestionIndex % 2 == 0)
         {
             isTrue = true;
@@ -66,7 +76,7 @@ public class Trivia : MonoBehaviour {
         {
             isTrue = false;
         }
-            currentQuestion = level1Questions[randomQuestionIndex];
+            currentQuestion = levelQuestions[randomQuestionIndex];
             questionText.text = currentQuestion;
     }
 }

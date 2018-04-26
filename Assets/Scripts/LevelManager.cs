@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
 
+    private static LevelManager instance = null;
+
     public void LoadLevel(string name)
     {
         Debug.Log("New Level load: " + name);
@@ -21,4 +23,17 @@ public class LevelManager : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        } else
+        {
+            Destroy(instance.gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+
 }

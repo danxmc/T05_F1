@@ -13,7 +13,7 @@ public class PlayerCollision : MonoBehaviour {
         {
             // Disbale the players movement.
             movement.enabled = false;
-            FindObjectOfType<GameManager>().EndGame();
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().LoadLevel("Questions");
         }
     }
 }

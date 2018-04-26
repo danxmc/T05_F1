@@ -3,22 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Trivia : MonoBehaviour {
 
-    LevelManager levelMngr = new LevelManager();
-    GameManager gameMngr = new GameManager();
+    public Text questionText;
 
     //These arrays will hold the questions for each level
-    public Questions[] level1Questions;
-    public Questions[] level2Questions;
-    public Questions[] level3Questions;
+    public string[] level1Questions;
     //currentQuestion
-    public static Questions currentQuestion;
-    public static List<Questions> unansweredQuestions;
+    private  string currentQuestion;
+
 
     int level = 1;
-   
+
+    private bool isTrue;
+    private bool answer;
+
     string question;
     // Use this for initialization
     void Start()
@@ -26,58 +27,46 @@ public class Trivia : MonoBehaviour {
         SetRandomQuestion();
     }
 
-    void Update()
-    {
-
-    }
 
     
-    public void CheckAnswer(string input)
+    public void TrueAnswer()
     {
-        if (input == "true")
+        Debug.Log("Correct");
+        answer = true;
+        CheckAnswer();
+    }
+
+    public void FalseAnswer()
+    {
+        Debug.Log("Incorrect");
+        answer = false;
+        CheckAnswer();
+    }
+
+    void CheckAnswer()
+    {
+        if (answer == isTrue)
         {
-            if (currentQuestion.isTrue) {
-                levelMngr.LoadLevel("Level01");
-            } else {
-                gameMngr.EndGame();
-            }
-            
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().LoadLevel("Level01");
         }
         else
         {
-            if (currentQuestion.isTrue)
-            {
-                gameMngr.EndGame();
-            }
-            else
-            {
-                levelMngr.LoadLevel("Level01");
-            }
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().LoadLevel("Menu");
         }
     }
 
     private void SetRandomQuestion()
     {
-        switch (level)
+        int randomQuestionIndex = UnityEngine.Random.Range(0, level1Questions.Length);
+        if (randomQuestionIndex % 2 == 0)
         {
-            case 1:
-                unansweredQuestions = level1Questions.ToList<Questions>();
-                int randomQuestionIndex = UnityEngine.Random.Range(0, unansweredQuestions.Count);
-                currentQuestion = level1Questions[randomQuestionIndex];
-                break;
-            case 2:
-                unansweredQuestions = level2Questions.ToList<Questions>();
-                int randomQuestionIndex2 = UnityEngine.Random.Range(0, unansweredQuestions.Count);
-                currentQuestion = level2Questions[randomQuestionIndex2];
-                break;
-            case 3:
-                unansweredQuestions = level2Questions.ToList<Questions>();
-                int randomQuestionIndex3 = UnityEngine.Random.Range(0, unansweredQuestions.Count);
-                currentQuestion = level2Questions[randomQuestionIndex3];
-                break;
-            default:
-                Debug.LogError("I cant believe it, The ball was stolen from you");
-                break;
+            isTrue = true;
         }
+        else
+        {
+            isTrue = false;
+        }
+            currentQuestion = level1Questions[randomQuestionIndex];
+            questionText.text = currentQuestion;
     }
 }

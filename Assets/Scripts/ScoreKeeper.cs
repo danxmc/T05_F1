@@ -17,7 +17,7 @@ public class ScoreKeeper : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        scoreText.text = player.position.z.ToString("0");
+        scoreText.text = (player.position.z + score).ToString("0,0");
     }
 
 	public static void Reset() {

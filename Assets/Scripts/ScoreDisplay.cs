@@ -11,9 +11,4 @@ public class ScoreDisplay : MonoBehaviour {
 		scoreText.text = ScoreKeeper.score.ToString ();
 		ScoreKeeper.Reset ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

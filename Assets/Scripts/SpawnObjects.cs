@@ -13,16 +13,12 @@ public class SpawnObjects : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        for (int i = 0; i<15; i++) {
-            spawnBlocks();
+        for (int i = 0; i < 15; i++) {
+            SpawnBlocks();
         }
 	}
-	
-	// Update is called once per frame
-	void Update () {
-    }
 
-    public void spawnBlocks()
+    public void SpawnBlocks()
     {
         Vector3 pos = center + new Vector3(Random.Range(-size.x/2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z /2 , size.z/2));
         Instantiate(blockPrefab, pos, Quaternion.identity);

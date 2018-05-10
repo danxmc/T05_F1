@@ -17,7 +17,7 @@ public class Trivia : MonoBehaviour {
     private bool isTrue;
     private bool answer;
 
-    string question;
+    
     // Use this for initialization
     void Start()
     {

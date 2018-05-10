@@ -86,5 +86,4 @@ public struct Highscore
         username = _username;
         score = _score;
     }
-
 }

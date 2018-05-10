@@ -10,6 +10,10 @@ public class LevelManager : MonoBehaviour {
     public void LoadLevel(string name)
     {
         Debug.Log("New Level load: " + name);
+        if (name == "Menu")
+        {
+            ScoreKeeper.Reset();
+        }
         SceneManager.LoadScene(name);
     }
 
@@ -19,7 +23,7 @@ public class LevelManager : MonoBehaviour {
         Application.Quit();
     }
 
-    public void loadNextLevel()
+    public void LoadNextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

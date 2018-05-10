@@ -11,8 +11,8 @@ public class ScoreKeeper : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//	We dynamicaly point to the Text object in our UI.
-		scoreText = GetComponent<Text> ();
-		scoreText.text = score.ToString ();
+		scoreText = GetComponent<Text>();
+		scoreText.text = score.ToString();
 	}
 	
 	// Update is called once per frame
@@ -22,6 +22,5 @@ public class ScoreKeeper : MonoBehaviour {
 
 	public static void Reset() {
 		score = 0;
-		// scoreText.text = score.ToString ();
 	}
 }

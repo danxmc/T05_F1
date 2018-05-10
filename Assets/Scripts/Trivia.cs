@@ -21,11 +21,11 @@ public class Trivia : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        processTextFile();
+        ProcessTextFile();
         SetRandomQuestion();
     }
 
-    void processTextFile()
+    void ProcessTextFile()
     {
         /* split the text file by newline characters */
         string[] lineArray = textFile.text.Split("\n"[0]);

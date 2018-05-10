@@ -38,7 +38,7 @@
   <Class Name="LevelManager">
     <Position X="5.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAABAAAAAAAAAAEAQAEA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAABAAAAAQAAAAAAQAEA=</HashCode>
       <FileName>Assets\Scripts\LevelManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -91,15 +91,8 @@
       <FileName>Assets\Scripts\SpawnObjects.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TextDisplay">
-    <Position X="10.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\Scripts\TextDisplay.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Trivia">
-    <Position X="10.5" Y="2.25" Width="1.75" />
+    <Position X="10.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>EAAAAQAACCQEAAAAAAACCIAAAAQAAEAAAAAAAABAAAI=</HashCode>
       <FileName>Assets\Scripts\Trivia.cs</FileName>
